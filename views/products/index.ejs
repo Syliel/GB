@@ -1,0 +1,14 @@
+<% layout('layouts/boilerplate') -%>
+    <div class="columns is-desktop">
+        <% for (let products of product) { %>
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-square">
+                            <img src="<%= products.image %>">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </div>
