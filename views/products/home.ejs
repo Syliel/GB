@@ -1,45 +1,71 @@
 <% layout('layouts/boilerplate') -%>
-    <link rel="stylesheet" href="./css/home.css">
-
+    <link rel="stylesheet" href="css/home.css">
+    <div class="columns_is-desktop">
+        <h1>Giant Beagle Supermarket</h1>
+    </div>
+    <div class="columns_is-desktop">
+        <h2 class="h2">Dairy:</h2>
+    </div>
     <div class="columns is-desktop">
         <% for (let products of product) { %>
             <% if(products.details.category==='dairy' ) {%>
-                <div class="column is-2">
-                    <div class="card">
+                <div class="column is-one-fifth is-2-widescreen">
+                    <div class=" card">
                         <div class="card-image">
                             <figure class="image is-square">
                                 <img src="<%= products.image %>">
                             </figure>
                         </div>
+                        <div class="card-header-title">
+                            <p>
+                                <%= products.name %>
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <% } %>
                     <% } %>
+    </div>
+    <div class="columns_is-desktop">
+        <h2 class="h2">Produce:</h2>
     </div>
     <div class="columns is-desktop">
         <% for (let products of product) { %>
             <% if(products.details.category==='produce' ) {%>
-                <div class="column is-2">
-                    <div class="card">
-                        <div class="card-image">
+                <div class="column is-one-fifth is-2-widescreen">
+                    <div class=" card">
+                        <a class="card-image" href="products/<%= products._id %> ">
                             <figure class="image is-square">
                                 <img src="<%= products.image %>">
                             </figure>
+                        </a>
+                        <div class="card-header-title">
+                            <p>
+                                <%= products.name %>
+                            </p>
                         </div>
                     </div>
                 </div>
                 <% } %>
                     <% } %>
     </div>
+    <div class="columns_is-desktop">
+        <h2 class="h2">Bakery:</h2>
+    </div>
     <div class="columns is-desktop">
         <% for (let products of product) { %>
             <% if(products.details.category==='bakery' ) {%>
-                <div class="column is-2">
+                <div class="column is-one-fifth is-2-widescreen is-1-fullhd">
                     <div class="card">
                         <div class="card-image">
                             <figure class="image is-square">
                                 <img src="<%= products.image %>">
                             </figure>
+                        </div>
+                        <div class="card-header-title">
+                            <p>
+                                <%= products.name %>
+                            </p>
                         </div>
                     </div>
                 </div>

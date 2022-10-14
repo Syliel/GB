@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My custom Bulma website</title>
     <script src="https://kit.fontawesome.com/750bc0a9ec.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/mystyles.css">
+    <link rel="stylesheet" href="<%= process.env.BASE_URL2 %>css/mystyles.css">
+    <base href="<%= process.env.BASE_URL2 %>">
 
 </head>
 
 <body>
     <%- include('../partials/navbar') %>
-        <div class="container">
+        <div class="container is-fluid">
             <%- body -%>
         </div>
 
