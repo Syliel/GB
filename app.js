@@ -30,8 +30,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(`${baseURL}products`, productRoutes);
 
 app.get(baseURL, async (req, res) => {
-    const product = await Product.find({});
-    res.render('products/home', { product })
+    const dairy = await Product.find({ 'details.category': 'dairy' }).limit(6).exec();
+    const produce = await Product.find({ 'details.category': 'produce' }).limit(6).exec();
+    const bakery = await Product.find({ 'details.category': 'bakery' }).limit(6).exec();
+    res.render('products/home', { dairy, produce, bakery })
 });
 
 app.listen(3000, () => {

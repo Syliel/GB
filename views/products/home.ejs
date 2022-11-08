@@ -1,74 +1,95 @@
 <% layout('layouts/boilerplate') -%>
     <link rel="stylesheet" href="css/home.css">
     <div class="columns_is-desktop">
-        <h1>Giant Beagle Supermarket</h1>
+        <h1 class="h1">Giant Beagle</h1>
     </div>
-    <div class="columns_is-desktop">
-        <h2 class="h2">Dairy:</h2>
-    </div>
+
     <div class="columns is-desktop">
-        <% for (let products of product) { %>
-            <% if(products.details.category==='dairy' ) {%>
-                <div class="column is-one-fifth is-2-widescreen">
-                    <div class=" card">
-                        <div class="card-image">
-                            <figure class="image is-square">
-                                <img src="<%= products.image %>">
-                            </figure>
-                        </div>
-                        <div class="card-header-title">
-                            <p>
-                                <%= products.name %>
-                            </p>
-                        </div>
+        <div class="column is-2">
+            <article class="message is-success">
+                <div class="message-header">
+                    <p>Dairy</p>
+                </div>
+                <div class="message-body">
+                    Wholesome, farm-fresh milk, cheese and plant-based alternatives to nourish you and your family.
+                </div>
+            </article>
+        </div>
+        <% for(let d of dairy) {%>
+            <div class="column is-variable is-3-mobile is-3-tablet is-2-desktop is-1-widescreen is-1-fullhd">
+                <div class="card">
+                    <a class="card-image" href="products/<%= d._id %>">
+                        <figure class="image is-square">
+                            <img src="<%= d.image %>">
+                        </figure>
+                    </a>
+                    <div class="card-header-title" style="height: 100px;">
+                        <p>
+                            <%= d.name %>
+                        </p>
                     </div>
                 </div>
-                <% } %>
-                    <% } %>
+            </div>
+            <% } %>
     </div>
-    <div class="columns_is-desktop">
-        <h2 class="h2">Produce:</h2>
-    </div>
-    <div class="columns is-desktop">
-        <% for (let products of product) { %>
-            <% if(products.details.category==='produce' ) {%>
-                <div class="column is-one-fifth is-2-widescreen">
-                    <div class=" card">
-                        <a class="card-image" href="products/<%= products._id %> ">
-                            <figure class="image is-square">
-                                <img src="<%= products.image %>">
-                            </figure>
-                        </a>
-                        <div class="card-header-title">
-                            <p>
-                                <%= products.name %>
-                            </p>
-                        </div>
+    <div class="columns">
+        <div class="column is-2">
+
+            <article class="message is-success">
+                <div class="message-header">
+                    <p>Produce</p>
+                </div>
+                <div class="message-body">
+                    A variety of hand-selected, field-fresh fruits and veggies, including farmer’s market-quality
+                    organic options.
+                </div>
+            </article>
+        </div>
+        <% for (let p of produce) { %>
+            <div class="column is-variable is-3-mobile is-3-tablet is-2-desktop is-1-widescreen is-1-fullhd">
+                <div class="card">
+                    <a class="card-image" href="products/<%= p._id %>">
+                        <figure class="image is-square">
+                            <img src="<%= p.image %>">
+                        </figure>
+                    </a>
+                    <div class="card-header-title" style="height: 100px;">
+                        <p>
+                            <%= p.name %>
+                        </p>
                     </div>
                 </div>
-                <% } %>
-                    <% } %>
-    </div>
-    <div class="columns_is-desktop">
-        <h2 class="h2">Bakery:</h2>
+            </div>
+            <% } %>
     </div>
     <div class="columns is-desktop">
-        <% for (let products of product) { %>
-            <% if(products.details.category==='bakery' ) {%>
-                <div class="column is-one-fifth is-2-widescreen is-1-fullhd">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-square">
-                                <img src="<%= products.image %>">
-                            </figure>
-                        </div>
-                        <div class="card-header-title">
-                            <p>
-                                <%= products.name %>
-                            </p>
-                        </div>
+        <div class="column is-2">
+            <div class="message is-success">
+                <div class="message-header">
+                    <p>Bakery</p>
+                </div>
+                <div class="message-body">
+                    Find the perfect baked goods for any occasion, from fresh artisan breads to hand-crafted cupcakes
+                    and
+                    pastries.
+                </div>
+            </div>
+
+        </div>
+        <% for (let b of bakery) { %>
+            <div class="column is-variable is-3-mobile is-3-tablet is-2-desktop is-1-widescreen is-1-fullhd">
+                <div class="card">
+                    <a class="card-image" href="products/<%= b._id %>">
+                        <figure class="image is-square">
+                            <img src="<%= b.image %>">
+                        </figure>
+                    </a>
+                    <div class="card-header-title" style="height: 100px;">
+                        <p>
+                            <%= b.name %>
+                        </p>
                     </div>
                 </div>
-                <% } %>
-                    <% } %>
+            </div>
+            <% } %>
     </div>
