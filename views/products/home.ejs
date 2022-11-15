@@ -3,10 +3,9 @@
     <div class="columns_is-desktop">
         <h1 class="h1">Giant Beagle</h1>
     </div>
-
-    <div class="columns is-desktop">
+    <div class="columns is-desktop is-vcentered">
         <div class="column is-2">
-            <article class="message is-success">
+            <article class="message is-success is-medium">
                 <div class="message-header">
                     <p>Dairy</p>
                 </div>
@@ -16,7 +15,8 @@
             </article>
         </div>
         <% for(let d of dairy) {%>
-            <div class="column is-variable is-3-mobile is-3-tablet is-2-desktop is-1-widescreen is-1-fullhd">
+            <div class="column is-variable is-3-mobile is-3-tablet is-2-desktop is-1-widescreen is-1-fullhd"
+                style="margin-left: 30px;">
                 <div class="card">
                     <a class="card-image" href="products/<%= d._id %>">
                         <figure class="image is-square">
@@ -31,11 +31,17 @@
                 </div>
             </div>
             <% } %>
+                <div class="column is-2">
+                    <a href="products/category/dairy">
+                        <p>See All Dairy</p>
+                        <i class="fa-solid fa-arrow-right-long fa-2xl"></i>
+                    </a>
+                </div>
     </div>
-    <div class="columns">
+    <div class="columns is-desktop is-vcentered">
         <div class="column is-2">
 
-            <article class="message is-success">
+            <article class="message is-success is-medium">
                 <div class="message-header">
                     <p>Produce</p>
                 </div>
@@ -46,7 +52,8 @@
             </article>
         </div>
         <% for (let p of produce) { %>
-            <div class="column is-variable is-3-mobile is-3-tablet is-2-desktop is-1-widescreen is-1-fullhd">
+            <div class="column is-variable is-3-mobile is-3-tablet is-2-desktop is-1-widescreen is-1-fullhd"
+                style="margin-left: 30px;">
                 <div class="card">
                     <a class="card-image" href="products/<%= p._id %>">
                         <figure class="image is-square">
@@ -61,15 +68,22 @@
                 </div>
             </div>
             <% } %>
+                <div class="column is-2">
+                    <a href="products/category/produce">
+                        <p>See All Produce</p>
+                        <i class="fa-solid fa-arrow-right-long fa-2xl"></i>
+                    </a>
+                </div>
     </div>
-    <div class="columns is-desktop">
+    <div class="columns is-desktop is-vcentered">
         <div class="column is-2">
-            <div class="message is-success">
+            <div class="message is-success is-medium">
                 <div class="message-header">
                     <p>Bakery</p>
                 </div>
                 <div class="message-body">
-                    Find the perfect baked goods for any occasion, from fresh artisan breads to hand-crafted cupcakes
+                    Find the perfect baked goods for any occasion, from fresh artisan breads to hand-crafted
+                    cupcakes
                     and
                     pastries.
                 </div>
@@ -77,7 +91,8 @@
 
         </div>
         <% for (let b of bakery) { %>
-            <div class="column is-variable is-3-mobile is-3-tablet is-2-desktop is-1-widescreen is-1-fullhd">
+            <div class="column is-variable is-3-mobile is-3-tablet is-3-desktop is-1-widescreen is-1-fullhd"
+                style="margin-left: 30px;">
                 <div class="card">
                     <a class="card-image" href="products/<%= b._id %>">
                         <figure class="image is-square">
@@ -92,4 +107,10 @@
                 </div>
             </div>
             <% } %>
+                <div class="column is-2">
+                    <a href="products/category/bakery">
+                        <p>See All Bakery</p>
+                        <i class="fa-solid fa-arrow-right-long fa-2xl"></i>
+                    </a>
+                </div>
     </div>

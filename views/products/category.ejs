@@ -1,21 +1,21 @@
 <% layout('layouts/boilerplate') -%>
-    <link rel="stylesheet" href="css/dairy.css">
+    <link rel="stylesheet" href="css/category.css">
     <% let i=0; %>
         <% for (let c=0; c<=num_columns; c++) { %>
             <div class="columns">
                 <% for (let x=0; x<=max_width -1; x++) { %>
-                    <% if (i>=dairy.length) { break }%>
+                    <% if (i>=products.length) { break }%>
                         <div
                             class="column is-variable is-3-mobile is-3-tablet is-3-desktop is-2-widescreen is-2-fullhd">
                             <div class="card">
                                 <a class="card-image">
                                     <figure class="image is-square">
-                                        <img src="<%= dairy[i].image %>">
+                                        <img src="<%= products[i].image %>">
                                     </figure>
                                 </a>
                                 <div class="card-header-title" style="height: 100px;">
                                     <p>
-                                        <%= dairy[i].name %>
+                                        <%= products[i].name %>
                                     </p>
                                 </div>
                             </div>

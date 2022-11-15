@@ -1,4 +1,8 @@
 <% layout('layouts/boilerplate') -%>
-    <div>
-        <img src="<%= product.image %>" alt="">
+    <link rel="stylesheet" href="css/show.css">
+    <div class="container">
+        <figure class="image">
+            <img src="<%= product.image %>" style="width: 40%; height: 40%;" alt="">
+        </figure>
+        <a href="/myCart/ " class="button">Add to Cart</a>
     </div>
