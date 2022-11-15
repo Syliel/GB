@@ -1,35 +1,37 @@
 const Product = require('../models/products');
+const Cart = require('../models/cart');
 
 module.exports.index = async (req, res) => {
     const product = await Product.find({});
-    res.render('products/index', { product }) //the curly brackets here acutally render the campgrounds to the page
+    res.render('products/index', { product })
 }
-
 
 module.exports.showProduct = async (req, res) => {
     const product = await Product.findById(req.params.id);
     res.render('products/show', { product });
 }
 
-module.exports.showProduce = async (req, res) => {
+module.exports.showCategory = async (req, res) => {
     const max_width = 4;
-    const produce = await Product.find({ 'details.category': 'produce' }).exec();
-    const num_columns = Math.ceil((produce.length) / max_width);
-    res.render('products/produce', { produce, max_width, num_columns }) //the curly brackets here acutally render the campgrounds to the page
+    const category = req.params.category
+    const products = await Product.find({ 'details.category': category }).exec();
+    if (products.length === 0) {
+        console.log("Throw 404 here")
+        res.status(404).send(`No category for ${category}`)
+    }
+    const num_columns = Math.ceil((products.length) / max_width);
+
+    res.render('products/category', { products, max_width, num_columns })
 }
 
-module.exports.showDairy = async (req, res) => {
-    const max_width = 4;
-    const dairy = await Product.find({ 'details.category': 'dairy' }).exec();
-    const num_columns = Math.ceil((dairy.length) / max_width);
-    res.render('products/dairy', { dairy, max_width, num_columns }) //the curly brackets here acutally render the campgrounds to the page
-}
-
-module.exports.showBakery = async (req, res) => {
-    const max_width = 4;
-    const bakery = await Product.find({ 'details.category': 'bakery' }).exec();
-    const num_columns = Math.ceil((bakery.length) / max_width);
-    console.log(bakery.length)
-    console.log(num_columns)
-    res.render('products/bakery', { bakery, max_width, num_columns }) //the curly brackets here acutally render the campgrounds to the page
+module.exports.addCart = async (req, res) => {
+    // const productId = req.params.id;
+    // console.log(productId)
+    // const cart = new Cart(req.session.cart ? req.session.cart : {});
+    // const products = await Product.findById(productId)
+    // cart.add(products, products.id);
+    // req.session.cart = cart;
+    // console.log(cart)
+    // res.redirect('/');
+    res.send("This is a response!")
 }
